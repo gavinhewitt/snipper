@@ -1,0 +1,12 @@
+{% extends config('snipper.base_view') %}
+
+{% block meta_title 'Code Snippets' %}
+
+
+{% block content %}
+
+    <h2 class="mb-3">{{ snippet.id ? 'Edit' : 'Create' }} snippet</h2>
+
+    {% include 'snipper::_form-create-edit.twig' %}
+
+{% endblock %}

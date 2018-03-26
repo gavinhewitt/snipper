@@ -1,0 +1,5 @@
+{% if snippets.count %}
+    {% for snippet in snippets %}
+        {% include 'snipper::_snippet-list-item.twig' %}
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,47 @@
+{% extends config('snipper.base_view') %}
+
+{% block meta_title 'Code Snippets' %}
+
+{% block content %}
+
+    {% if snippet is defined %}
+        <h1>{{ snippet.name }}</h1>
+
+        {% if snippet.source_url %}
+            <small><a href="{{ snippet.source_url }}" target="_blank">{{ snippet.source_url }}</a></small>
+            <br>
+            <br>
+        {% endif %}
+
+        <input type="text" class="form-control input-monospace input-sm js-url-field"
+               value="<script src=&quot;{{ config_get('snipper.embed_url') ~'/'~ config_get('snipper.prefix', 'snipper') ~'/embed/'~ snippet.id }}.js&quot;></script>"
+               readonly="">
+
+        <a href="{{ route('snippet.edit', snippet.id) }}" class="btn btn-secondary btn-sm">
+            Edit
+        </a>
+        <br>
+        <br>
+
+        <pre><code class="language-php">{{ snippet.content|nl2br }}</code></pre>
+
+    {% else %}
+        <h3>Deze snippet bestaat niet</h3>
+    {% endif %}
+
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/themes/prism.css">
+{% endblock %}
+
+
+
+{% block foot_js %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/components/prism-php.min.js"></script>
+
+{% endblock %}

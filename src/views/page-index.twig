@@ -1,0 +1,16 @@
+{% extends config('snipper.base_view') %}
+
+{% block meta_title 'Code Snippets' %}
+
+{% block content %}
+    <div class="text-right m-b-md">
+        <a href="{{ route('snippet.create') }}" class="btn btn-success">Create snippet</a>
+    </div>
+
+    <h1>All snippets</h1>
+
+    <script src="{{ config('snipper.embed_url') }}/{{ config('snipper.prefix') }}/embed/1.js"></script>
+
+    {% include 'snipper::_list-snippets.twig' %}
+
+{% endblock %}

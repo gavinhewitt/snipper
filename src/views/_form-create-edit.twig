@@ -1,0 +1,12 @@
+{% if snippet.id %}
+    {{ form_model(snippet, {route: ['snippet.edit', snippet.id]}) }}
+{% else %}
+    {{ form_open() }}
+{% endif %}
+
+{{ form_textField('name', 'Naam/title') }}
+{{ form_textField('source_url', 'Source URL') }}
+{{ form_textareaField('content', 'Inhoud', snippet.content, {rows: 13}) }}
+
+{{ form_submit('Opslaan', {class: 'btn btn-primary'}) }}
+{{ form_close() }}

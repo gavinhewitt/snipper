@@ -1,0 +1,30 @@
+{
+    "name": "gavinhewitt/snipper",
+    "description": "Codesnippets package for Laravel 5.*",
+    "authors": [
+        {
+            "name": "Gavin Hewitt",
+            "email": "gavin@instructo.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "~5.0",
+        "rcrowe/twigbridge": "^0.9.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "GavinHewitt\\Snipper\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Snipper\\SnipperServiceProvider"
+          ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
