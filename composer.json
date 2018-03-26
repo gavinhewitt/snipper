@@ -1,6 +1,6 @@
 {
     "name": "gavinhewitt/snipper",
-    "description": "Codesnippets package for Laravel 5.*",
+    "description": "Snippets package for Laravel 5.*",
     "authors": [
         {
             "name": "Gavin Hewitt",
